@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka", sans-serif;
+}
+
+.darkcolor {
+  background-color: #0d0628;
+}
+
+.color3 {
+  color: #fca17d;
+}
+
+.white {
+  color: #fff;
+}
+
+.body {
+  background-image: url("images/IMG_0596.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100vw 100vh;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  gap: 50px;
+}
+
+.heading {
+  font-size: 65px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 20px;
+  border: 5px solid #fca17d;
+  padding: 50px;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.input-field {
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+.select-currency {
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.btn {
+  background-color: #fca17d;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  transition: all 0.5s;
+  border: 1px solid #f49773;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn:active {
+  opacity: 0.85;
+}
+
+.value-container {
+  background-color: #fff;
+  padding: 50px;
+  margin-top: 10px;
+  border: 5px solid #f49773;
+  border-radius: 20px;
+  display: none;
+}
+
+.final-value {
+  font-size: 20px;
+  font-weight: 500;
+}

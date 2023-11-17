@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body darkcolor">
+    <div class="flex-container">
+      <header>
+        <h1 class="heading white">
+          <span class="color3">Currency</span> Converter
+        </h1>
+      </header>
+      <main>
+        <form class="form" id="form">
+          <label for="amount-input">Kwota:</label>
+          <input
+            class="input-field"
+            type="number"
+            id="amount-input"
+            required
+            min="0.01"
+            step="0.01"
+          />
+          <label for="currency">Waluta:</label>
+          <select class="select-currency" id="currency" required>
+            <option value="EUR">Euro</option>
+            <option value="USD">Dolary amerykańskie</option>
+            <option value="CHF">Franki szwajcarskie</option>
+          </select>
+          <button class="btn white" id="btn">Przelicz</button>
+        </form>
+
+        <div class="value-container" id="value-container">
+          <p id="final-value" class="final-value color3"></p>
+        </div>
+      </main>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
