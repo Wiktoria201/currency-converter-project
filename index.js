@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function convertCurrency(event) {
     event.preventDefault();
-    const amountInput = document.querySelector("#amount-input").value;
-    const currency = document.querySelector("#currency").value;
-    fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${currency}/today/`)
+    const amountInput = event.target.amount.value;
+    const currency = event.target.currency.value;
+    fetch(`https://api.nbp.pl/api/exchangerates/rates/a/${currency}`)
       .then((response) => {
         return response.json();
       })

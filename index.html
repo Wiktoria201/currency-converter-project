@@ -12,11 +12,11 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="body darkcolor">
+  <body class="body dark-color">
     <div class="flex-container">
       <header>
         <h1 class="heading white">
-          <span class="color3">Currency</span> Converter
+          <span class="light-color">Currency</span> Converter
         </h1>
       </header>
       <main>
@@ -29,9 +29,15 @@
             required
             min="0.01"
             step="0.01"
+            name="amount"
           />
           <label for="currency">Waluta:</label>
-          <select class="select-currency" id="currency" required>
+          <select
+            class="select-currency"
+            id="currency"
+            name="currency"
+            required
+          >
             <option value="EUR">Euro</option>
             <option value="USD">Dolary amerykańskie</option>
             <option value="CHF">Franki szwajcarskie</option>
@@ -40,7 +46,7 @@
         </form>
 
         <div class="value-container" id="value-container">
-          <p id="final-value" class="final-value color3"></p>
+          <p id="final-value" class="final-value light-color"></p>
         </div>
       </main>
     </div>
