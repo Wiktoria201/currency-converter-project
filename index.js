@@ -18,10 +18,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "To " + (amountInput * rate).toFixed(2) + " złotych";
           valueContainer.style.display = "block";
         } else {
-          alert("error");
+          alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
         }
       })
       .catch((error) => {
+        alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
         console.error(error);
       });
   });
