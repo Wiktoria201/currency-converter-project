@@ -1,6 +1,6 @@
 # Currency-converter-project
 
-This simple currency converter project allows users to convert between various currencies based on real-time exchange rates. The project is built using HTML, CSS, and JavaScript, making it easy to understand and modify.
+This simple currency converter project allows users to convert between various currencies based on real-time exchange rates. In the future I will add more currencies.
 
 
 ## Technologies Used
