@@ -3,6 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const finalValue = document.querySelector("#final-value");
   const valueContainer = document.querySelector("#value-container");
   const currencySelect = document.querySelector("#currency");
+  let errorMessage = null;
+
+  function showErrorMessage() {
+    if (!errorMessage) {
+      const errorMessageContent =
+        "Failed to fetch currency data. Please try again later.";
+      errorMessage = document.createElement("p");
+      errorMessage.textContent = errorMessageContent;
+      errorMessage.classList.add("error");
+      errorMessage.style.display = "block";
+      form.appendChild(errorMessage);
+    }
+    return errorMessage;
+  }
 
   fetch("https://api.nbp.pl/api/exchangerates/tables/a/")
     .then((response) => {
@@ -17,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         currencySelect.appendChild(option);
       });
     })
-    .catch((error) => {
-      console.error(error);
+    .catch(() => {
+      showErrorMessage();
     });
 
   form.addEventListener("submit", function convertCurrency(event) {
@@ -35,13 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
           finalValue.textContent =
             "To " + (amountInput * rate).toFixed(2) + " złotych";
           valueContainer.style.display = "block";
+
+          const errorMessage = form.querySelector(".error");
+          if (errorMessage) {
+            form.removeChild(errorMessage);
+          }
         } else {
-          alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
+          showErrorMessage();
         }
       })
-      .catch((error) => {
-        alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
-        console.error(error);
+      .catch(() => {
+        showErrorMessage();
       });
   });
 });
