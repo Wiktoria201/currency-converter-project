@@ -2,6 +2,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("#form");
   const finalValue = document.querySelector("#final-value");
   const valueContainer = document.querySelector("#value-container");
+  const currencySelect = document.querySelector("#currency");
+
+  fetch("https://api.nbp.pl/api/exchangerates/tables/a/")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const currencies = data[0].rates;
+      currencies.forEach((currency) => {
+        const option = document.createElement("option");
+        option.value = currency.code;
+        option.textContent = currency.currency;
+        currencySelect.appendChild(option);
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
   form.addEventListener("submit", function convertCurrency(event) {
     event.preventDefault();
@@ -22,7 +40,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => {
-        alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
+        // alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
+        // console.error(error);
+        const errorMessage = document.createElement("p");
+        errorMessage.textContent =
+          "Wystąpił problem z przeliczeniem kwoty. Spróbuj ponownie później.";
+        errorMessage.classList.add("red");
+        valueContainer.appendChild(errorMessage);
+
         console.error(error);
       });
   });

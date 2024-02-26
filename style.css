@@ -17,6 +17,11 @@
   color: #fff;
 }
 
+.red {
+  color: red;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
   .body {
     background-image: url("images/IMG_0596.png");
@@ -25,6 +30,15 @@
     background-size: 100vw 100vh;
     overflow: hidden;
   }
+  .form {
+    max-width: 500px;
+  }
+  .value-container {
+    max-width: 500px;
+  }
+  .flex-container {
+    height: 100vh;
+  }
 }
 
 .flex-container {
@@ -32,7 +46,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
   gap: 50px;
 }
@@ -53,16 +66,17 @@
   background-color: #fff;
   font-size: 20px;
   font-weight: 500;
+  max-width: 300px;
 }
 
 .input-field {
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid rgb(100, 100, 100);
 }
 
 .select-currency {
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 10px;
 }
 
@@ -88,14 +102,16 @@
 
 .value-container {
   background-color: #fff;
-  padding: 50px;
-  margin-top: 10px;
+  padding: 20px;
+  margin: 10px 0px;
   border: 5px solid #f49773;
   border-radius: 20px;
   display: none;
+  max-width: 300px;
+  text-align: center;
 }
 
 .final-value {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
 }
