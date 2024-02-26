@@ -40,14 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => {
-        // alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
-        // console.error(error);
-        const errorMessage = document.createElement("p");
-        errorMessage.textContent =
-          "Wystąpił problem z przeliczeniem kwoty. Spróbuj ponownie później.";
-        errorMessage.classList.add("red");
-        valueContainer.appendChild(errorMessage);
-
+        alert("Mamy problem z przeliczeniem kwoty, spróbuj później");
         console.error(error);
       });
   });
